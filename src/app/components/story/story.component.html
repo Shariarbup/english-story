@@ -1,1 +1,19 @@
-<p>story works!</p>
+<div class="container mt-4">
+    <h2 class="text-center text-primary">{{ story?.title }}</h2>
+    <p><strong>Story ID:</strong> {{ story?.id }}</p>
+    <p><strong>Category:</strong> {{ story?.category }}</p>
+
+    <!-- Row for English and Bangla Translations -->
+    <div class="row mt-4">
+        <!-- English Translation -->
+        <div class="col-md-6">
+            <h5>English Translation</h5>
+            <p class="border p-3 rounded">{{ story?.englishTrans }}</p>
+        </div>
+        <!-- Bangla Translation -->
+        <div class="col-md-6">
+            <h5>Bangla Translation</h5>
+            <p class="border p-3 rounded">{{ story?.banglaTrans }}</p>
+        </div>
+    </div>
+</div>

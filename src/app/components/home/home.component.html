@@ -1,1 +1,59 @@
-<p>home works!</p>
+<div class="container mt-4">
+    <h2 class="text-center text-primary">Story Categories</h2>
+  
+    <!-- Loading Spinner -->
+    <div *ngIf="loading" class="text-center mt-4">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p>Loading stories...</p>
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger mt-4 text-center">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Story Accordion -->
+    <div *ngIf="!loading && !errorMessage">
+      <div class="accordion mt-3" id="storyAccordion">
+        <div
+          class="accordion-item"
+          *ngFor="let category of storyCategories; let i = index"
+        >
+          <h2 class="accordion-header" id="heading-{{ i }}">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              [attr.data-bs-target]="'#collapse-' + i"
+              [attr.aria-expanded]="i === 0"
+              [attr.aria-controls]="'collapse-' + i"
+            >
+              {{ category }}
+            </button>
+          </h2>
+          <div
+            [id]="'collapse-' + i"
+            class="accordion-collapse collapse"
+            [ngClass]="{ show: i === 0 }"
+            [attr.aria-labelledby]="'heading-' + i"
+            data-bs-parent="#storyAccordion"
+          >
+            <div class="accordion-body">
+                <ul *ngIf="storiesByCategory[category]?.length; else noStories">
+                    <li *ngFor="let story of storiesByCategory[category]">
+                      <a (click)="onStoryClick(story)" class="text-decoration-none text-success">
+                        {{ story.title }}
+                      </a>
+                    </li>
+                  </ul>
+                  <ng-template #noStories>
+                    <p class="text-muted">No stories available in this category.</p>
+                  </ng-template>
+                  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

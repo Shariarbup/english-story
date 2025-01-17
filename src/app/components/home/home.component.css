@@ -1,0 +1,23 @@
+.accordion-button {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .accordion-body ul {
+    padding-left: 20px;
+  }
+  
+  .accordion-body li {
+    margin-bottom: 20px;
+    list-style-type: none;
+  }
+
+  a {
+    cursor: pointer;
+    background-color: aliceblue;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    width: 100%;
+  }
+  

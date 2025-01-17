@@ -78,3 +78,24 @@ For more information on using the Angular CLI, including detailed command refere
 ```
 ## Restart the Development Server
 ```ng serve```
+
+
+# Install primeng
+
+```npm install primeng primeicons```
+
+```
+import { AccordionModule } from 'primeng/accordion';
+
+@NgModule({
+  declarations: [...],
+  imports: [
+    ...,
+    AccordionModule
+  ],
+  providers: [...],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
+```
