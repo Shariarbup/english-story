@@ -57,3 +57,24 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
+# How to install bootstreap
+
+## Install Bootstrap via npm
+```npm install bootstrap```
+
+## Add Bootstrap CSS to angular.json
+
+```
+"styles": [
+  "src/styles.css",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+]
+```
+## Restart the Development Server
+```ng serve```
